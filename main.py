@@ -1,4 +1,7 @@
 #
+#
+#
+
 def read_file_to_dict(filename):
     morse_dict = {}
     input_file = open(filename, "r")
@@ -12,6 +15,9 @@ def read_file_to_dict(filename):
 
 lem = read_file_to_dict("morsecode.txt")
 
+#
+#
+#
 def read_code_to_table(filename):
     table = []
     input_file = open(filename, "r")
@@ -52,7 +58,6 @@ def create_new_file(table, filename):
 domo = read_code_to_table("morse3.txt")
 
 masa = convert_table_to_words(lem, domo)
-
 jore = reorganize_table(masa)
 
 print(read_code_to_table("morse3.txt"))
