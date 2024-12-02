@@ -1,4 +1,5 @@
-def write_file_to_dict(filename):
+#
+def read_file_to_dict(filename):
     morse_dict = {}
     input_file = open(filename, "r")
     for line in input_file:
@@ -9,7 +10,7 @@ def write_file_to_dict(filename):
     input_file.close()
     return morse_dict
 
-lem = write_file_to_dict("morsecode.txt")
+lem = read_file_to_dict("morsecode.txt")
 
 def read_code_to_table(filename):
     table = []
@@ -20,7 +21,7 @@ def read_code_to_table(filename):
         table.append(row)
     return table
 
-def convert_table_to_morse(dictionary, table):
+def convert_table_to_words(dictionary, table):
     for i in range(len(table)):
         for j in range(len(table[i])):
             table[i][j] = dictionary[table[i][j]]
@@ -36,10 +37,24 @@ def reorganize_table(table):
         temp_list = []
     return new_table
 
-domo = read_code_to_table("morse1.txt")
+def create_new_file(table, filename):
+    data_file = open(filename, 'w')
+    temp_string = ""
+    for line in table:
+        for letters in line:
+            temp_string += letters
+        temp_string += "\n"
+        data_file.write(temp_string)
+        temp_string = ""
+    data_file.close()
 
-masa = convert_table_to_morse(lem, domo)
 
-print(read_code_to_table("morse1.txt"))
+domo = read_code_to_table("morse3.txt")
+
+masa = convert_table_to_words(lem, domo)
+
+jore = reorganize_table(masa)
+
+print(read_code_to_table("morse3.txt"))
 print(masa)
-print(reorganize_table(masa))
+print(jore)
