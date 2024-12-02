@@ -1,7 +1,6 @@
-#
-#
-#
-
+# Name: read_file_to_dict
+# Makes a dictionary and fills said dictionary with data from
+# the input file by splitting each line via the double space
 def read_file_to_dict(filename):
     morse_dict = {}
     input_file = open(filename, "r")
@@ -15,9 +14,9 @@ def read_file_to_dict(filename):
 
 lem = read_file_to_dict("morsecode.txt")
 
-#
-#
-#
+# Name: read_code_to_table
+# Creates a table with a preexisting file where each list
+# in the table is a line in the file that is split by spaces
 def read_code_to_table(filename):
     table = []
     input_file = open(filename, "r")
@@ -27,12 +26,21 @@ def read_code_to_table(filename):
         table.append(row)
     return table
 
+# Name: convert_table_to_words
+# Using the table made from the read_code_to_table function
+# and the dictionary from the read_file to dict function,
+# creates a new table by converting the morse code to English
 def convert_table_to_words(dictionary, table):
     for i in range(len(table)):
         for j in range(len(table[i])):
             table[i][j] = dictionary[table[i][j]]
     return table
 
+# Name: reorganize_table
+# Because the table that is made from convert_table_to_letters
+# converts puts the letters into lists (creating a table with a
+# list of lists), this function reverses that so that the table
+# doesn't contain internal lists inside the external ones
 def reorganize_table(table):
     new_table = []
     temp_list = []
