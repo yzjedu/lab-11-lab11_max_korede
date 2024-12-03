@@ -12,8 +12,6 @@ def read_file_to_dict(filename):
     input_file.close()
     return morse_dict
 
-lem = read_file_to_dict("morsecode.txt")
-
 # Name: read_code_to_table
 # Creates a table with a preexisting file where each list
 # in the table is a line in the file that is split by spaces
@@ -63,11 +61,17 @@ def create_new_file(table, filename):
     data_file.close()
 
 
-domo = read_code_to_table("morse3.txt")
+def main():
+    print("Welcome to our morsecode converter! We have a few files for you to convert.\n"
+          "But first, please enter the name of the file that contains the conversions")
+    convert_file = str(input(""))
+    morse_dictionary = read_file_to_dict(convert_file)
+    print("What file would you like to convert?")
+    morse_file = str(input(""))
+    letters = read_code_to_table(morse_file)
+    table = convert_table_to_words(morse_dictionary, letters)
+    finish = reorganize_table(table)
+    name = str(input("What should be the name of the new file? "))
+    create_new_file(finish, name)
 
-masa = convert_table_to_words(lem, domo)
-jore = reorganize_table(masa)
-
-print(read_code_to_table("morse3.txt"))
-print(masa)
-print(jore)
+main()
