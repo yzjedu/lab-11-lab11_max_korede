@@ -1,3 +1,17 @@
+# Programmers:  Max Rice and Korede Oni
+  # Course:  CS151, Professor Yalew
+  # Due Date: 11-28-24
+  # Lab Assignment:  11
+  # Problem Statement:  Someone has converted your files using a cipher. Ciphers have been very popular
+#                       for millenia as a way to hide information. Can you create a program to convert
+#                       them back to plain English??
+  # Data In: The name of the file that contains the morse code to English conversions, the name of the file
+  #          containing morse code that the user wants to convert to English, the name of the new file with the
+  #          translated morse code
+  # Data Out:  A new file containing the English translation of one of the morse code files
+  # Credits: Class
+
+
 import os
 # Name: read_file_to_dict
 # Makes a dictionary and fills said dictionary with data from
