@@ -89,7 +89,7 @@ def create_new_file(table, filename):
 
 # Name: main
 # Parameter(s): None
-# Function that allows program to run
+# Function that, when called, allows program to run
 def main():
     print("Welcome to our morse code converter! In this program, we will be taking a file written\n"
           "entirely in morse code, then write it out on a new file that you get to name!")
