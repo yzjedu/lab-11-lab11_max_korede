@@ -1,3 +1,4 @@
+import os
 # Name: read_file_to_dict
 # Makes a dictionary and fills said dictionary with data from
 # the input file by splitting each line via the double space
@@ -65,9 +66,15 @@ def main():
     print("Welcome to our morsecode converter! We have a few files for you to convert.\n"
           "But first, please enter the name of the file that contains the conversions")
     convert_file = str(input(""))
+    while not os.path.isfile(convert_file):
+        print("That file does not exist. Please try again.")
+        convert_file = input("please enter the name of the file that contains the conversions")
     morse_dictionary = read_file_to_dict(convert_file)
     print("What file would you like to convert?")
     morse_file = str(input(""))
+    while not os.path.isfile(morse_file):
+        print("That file does not exist. Please try again.")
+        morse_file = input("What file do you want to convert? ")
     letters = read_code_to_table(morse_file)
     table = convert_table_to_words(morse_dictionary, letters)
     finish = reorganize_table(table)
@@ -75,3 +82,5 @@ def main():
     create_new_file(finish, name)
 
 main()
+
+
