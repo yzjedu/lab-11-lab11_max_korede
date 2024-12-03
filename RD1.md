@@ -4,12 +4,7 @@
 * Partner Full Name: Korede Oni
 * Student ID: 
 
-What challenges did you encounter?
-How did you follow the first 3 rules of programming?
-Did you overcome them, and how?
-Any key takeaways?
-Do you think you learned what you were supposed to learn for this lab?
-What was it like working with your partne
+
 
 * A challenge i encountered was  knowing how to strip the brackets and quotations away and improving the HCI
 * We overcame them by troubleshooting and using class notes to figure out how to strip brackets from our lists of lists.
